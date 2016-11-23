@@ -33,6 +33,7 @@ function FindProxyForURL(url, host)
         ,'wordpress.com'
 
         ,'youtube.com'
+        ,'googlevideo.com'
         ,'ytimg.com'
     ];
     
