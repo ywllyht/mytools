@@ -35,6 +35,7 @@ function FindProxyForURL(url, host)
         ,'youtube.com'
         ,'googlevideo.com'
         ,'ytimg.com'
+        ,'jquery.com'
     ];
     
     var exp_list = [ ];
