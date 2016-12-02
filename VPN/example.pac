@@ -36,6 +36,7 @@ function FindProxyForURL(url, host)
         ,'googlevideo.com'
         ,'ytimg.com'
         ,'jquery.com'
+        ,'tensorflow.org'
     ];
     
     var exp_list = [ ];
