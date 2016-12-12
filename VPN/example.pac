@@ -22,6 +22,8 @@ function FindProxyForURL(url, host)
         ,'google.com.hk'
         ,'google.com.tw'
         ,'googleusercontent.com'
+        ,'googlevideo.com'
+        ,'gstatic.com'
 
         ,'t.co'
         ,'twitgoo.com'
@@ -29,11 +31,10 @@ function FindProxyForURL(url, host)
         ,'twitpic.com'
         ,'twimg.com'
         ,'tweetphoto.com'
-
         ,'wordpress.com'
 
         ,'youtube.com'
-        ,'googlevideo.com'
+        
         ,'ytimg.com'
         ,'jquery.com'
         ,'tensorflow.org'
