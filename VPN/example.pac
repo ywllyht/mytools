@@ -39,6 +39,7 @@ function FindProxyForURL(url, host)
         ,'ytimg.com'
         ,'jquery.com'
         ,'tensorflow.org'
+        ,'cnzz.com'
     ];
     
     var exp_list = [ ];
