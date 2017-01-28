@@ -40,6 +40,7 @@ function FindProxyForURL(url, host)
         ,'jquery.com'
         ,'tensorflow.org'
         ,'cnzz.com'
+        ,'dropbox.com'
     ];
     
     var exp_list = [ ];
