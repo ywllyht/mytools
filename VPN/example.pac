@@ -41,6 +41,8 @@ function FindProxyForURL(url, host)
         ,'tensorflow.org'
         ,'cnzz.com'
         ,'dropbox.com'
+        ,'slack.com'
+
     ];
     
     var exp_list = [ ];
