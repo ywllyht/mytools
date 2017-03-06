@@ -25,6 +25,8 @@ function FindProxyForURL(url, host)
         ,'googlevideo.com'
         ,'gstatic.com'
         ,'googleapis.com'
+        
+        ,'onedrive.live.com'
 
         ,'t.co'
         ,'twitgoo.com'
