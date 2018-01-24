@@ -7,6 +7,9 @@ pip install git+https://github.com/jeffkaufman/icdiff.git
 
 icdiff file1 file2
 
+# display line number
+icdiff -N file1 file2
+
 
 # Using with Git
 #To see what it looks like, try:
