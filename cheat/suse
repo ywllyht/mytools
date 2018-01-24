@@ -1,0 +1,6 @@
+#install git on suse_11 sp3/sp4
+
+zypper addrepo http://download.opensuse.org/repositories/devel:/tools:/scm/SLE_11_SP4/devel:tools:scm.repo
+zypper install git
+
+

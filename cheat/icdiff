@@ -1,0 +1,20 @@
+
+# official site
+https://github.com/jeffkaufman/icdiff
+
+# install
+pip install git+https://github.com/jeffkaufman/icdiff.git
+
+icdiff file1 file2
+
+
+# Using with Git
+#To see what it looks like, try:
+git difftool --extcmd icdiff
+
+#To install this as a tool you can use with Git, copy git-icdiff into your PATH and run:
+git icdiff
+
+#You can configure git-icdiff in Git's config:
+git config --global icdiff.options '--highlight --line-numbers'
+
