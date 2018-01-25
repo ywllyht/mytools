@@ -1,0 +1,12 @@
+# configure static IP on ubuntu 16.04
+sudo nano /etc/network/interfaces
+auto ens160
+#iface ens160 inet dhcp  # comment this line
+iface <interface> inet static
+    address 192.168.0.100
+    netmask 255.255.255.0
+    gateway 192.168.0.1
+dns-nameservers 8.8.8.8 8.8.4.4
+sudo /etc/init.d/networking restart
+
+
