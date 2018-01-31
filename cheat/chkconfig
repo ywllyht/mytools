@@ -1,0 +1,12 @@
+
+chkconfig --list
+chkconfig --level 2345 network on
+chkconfig --level 234 network off
+
+# add new service, put its script to /etc/rc.d/init.d
+chmod +x /etc/rc.d/init.d/oracle
+chkconfig --add oracle
+
+# delete a service
+chkconfig --del  oracle
+
