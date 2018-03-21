@@ -12,3 +12,8 @@ sudo /etc/init.d/networking restart
 # set static ip and default gateway
 sudo ifconfig ens160 10.200.218.63 netmask 255.255.240.0
 sudo route add default gw 10.200.208.1 ens160
+
+# chech installed packages
+apt list --installed
+dpkg -l
+dpkg -s nis 

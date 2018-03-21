@@ -21,9 +21,10 @@ cheat -v
 
       # insert following lines into ~/.bashrc
       export CHEAT_EDITOR=vi
+      export CHEATCOLORS=true
+      export DEFAULT_CHEAT_DIR='~/myproject/mytools/cheat'
 
 
       # sync with github
       cd ~/myproject
       git clone https://github.com/ywllyht/mytools.git
-      export DEFAULT_CHEAT_DIR='~/myproject/mytools/cheat'

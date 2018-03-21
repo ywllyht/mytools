@@ -1,0 +1,36 @@
+# urls
+https://anaconda.org/
+https://repo.continuum.io/archive/
+
+# the lastest version for python 3.5,  zipline do not support python 3.6
+wget https://repo.continuum.io/archive/Anaconda3-4.2.0-Linux-x86_64.sh
+
+# commands
+conda list
+conda list ^tables
+conda list py*
+conda search pytables
+conda install scipy
+conda remove scipy
+conda update pandas
+
+conda create -n py33test anaconda=1.9 python=3.3 numpy=1.8     # 创建一个新的环境
+source activate py33test           #切换到新环境
+source deactivate                  #切换回旧环境
+conda remove -all -n py33test      #删除这个新环境
+conda remove -n py33test scipy
+
+source activate tensorflow      # 创建tensorflow环境
+pip install --ignore-installed --upgrade https://storage.googleapis.com/tensorflow/mac/tensorflow-0.8.0rc0-py2-none-any.whl
+source deactivate               # 关闭tensorflow环境
+conda env remove -n tensorflow  #删除这个环境
+
+conda info --env                #查看当前环境列表
+conda env list
+
+# How to uninstall conda
+conda install anaconda-clean
+anaconda-clean --yes
+rm ~/anaconda3
+rm ~/.anaconda_backup/
+
