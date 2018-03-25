@@ -1,0 +1,8 @@
+nginx start
+nginx stop
+nginx restart
+nginx reload
+nginx quit
+nginx reopen  # reopening the log files
+nginx -g daemon off;
+

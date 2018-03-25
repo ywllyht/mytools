@@ -20,6 +20,8 @@ function install_python {
   wget -nc -P ~/Downloads https://repo.continuum.io/archive/Anaconda3-4.2.0-Linux-x86_64.sh
   bash ~/Downloads/Anaconda3-4.2.0-Linux-x86_64.sh
 
+  echo "upgrade pip"
+  pip install --upgrade pip
   return 0
 }
 
@@ -75,7 +77,25 @@ function other_configure {
   echo "eval \"$(_KY_COMPLETE=source ky)\"" >> ~/.bashrc
 }
 
+function install_tushare {
+  echo "install tushare"
+  pip install tushare
+}
 
+function install_talib {
+  mkdir ~/Downloads 2>/dev/null
+  cd ~/Downloads
+  wget http://prdownloads.sourceforge.net/ta-lib/ta-lib-0.4.0-src.tar.gz
+  tar xzvf ta-lib-0.4.0-src.tar.gz
+  cd ta-lib
+  ./configure
+  make
+  sudo make install
+  pip install ta-lib
+
+  echo "export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH" >> ~/.bashrc   # add this line in ~/.bashrc, fix could find "libta_lib.so.0" issue
+
+}
 
 command_sequence=(
    before_install 
@@ -84,6 +104,8 @@ command_sequence=(
    install_thefuck
    install_autojump
    install_tmux
+   install_tushare
+   install_talib
    other_configure
 
 )
