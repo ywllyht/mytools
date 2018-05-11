@@ -1,0 +1,5 @@
+# Lowercase all files and folders in current directory
+rename 'y/A-Z/a-z/' *
+
+# change *.trend to *.trend.industry
+rename 's/.trend$/.trend.industry/' *.trend
