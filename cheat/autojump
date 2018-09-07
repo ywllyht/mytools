@@ -1,0 +1,16 @@
+(1) ubuntu
+apt-get install autojump
+ubuntu上通过命令apt show autojump， 查询到路径为 /usr/share/autojump/autojump.sh
+所以，我们需要在.bashrc里面添加一句
+source /usr/share/autojump/autojump.sh
+
+
+(2) centos
+yum install autojump
+centos 7里面通过rpm -qlv autojump查询到的路径为/etc/profile.d/autojump.sh
+所以需要在.bashrc里面添加一句
+source /etc/profile.d/autojump.sh
+
+数据权重文件在~/.local/share/autojump/autojump.txt
+
+c

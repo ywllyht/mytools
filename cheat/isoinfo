@@ -1,0 +1,6 @@
+# list iso content without mount
+isoinfo -R -l -i xxxx.iso
+
+# extract file from iso
+isoinfo -R -i xxx.iso -x /images/mytest.py > /tmp/mytest.py
+
