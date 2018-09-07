@@ -6,3 +6,7 @@ nginx quit
 nginx reopen  # reopening the log files
 nginx -g daemon off;
 
+sudo nginx -s stop
+sudo nginx -s reload
+
+
