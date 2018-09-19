@@ -1,0 +1,4 @@
+# how to set env for sudo
+(1) modify secure_path in /etc/sudoers
+(2) sudo env "PATH=$PATH" command
+
