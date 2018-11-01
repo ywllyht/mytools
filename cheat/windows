@@ -1,0 +1,12 @@
+# restart
+shutdown -r -t 0
+
+# shutdown
+shutdown /s
+
+# remote connection
+mstsc
+
+# edit group policy
+gpedit.msc  gpupdate
+
