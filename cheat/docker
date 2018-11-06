@@ -35,3 +35,9 @@ docker images
 docker rm $(docker ps -a -q) 
 docker container prune
 
+# save and load
+docker save busybox-1 > /home/save.tar
+docker save "ywllyht/platformbuilder:1.0" > /tmp/platformbuilder.tar
+
+docker load < /home/save.tar
+
