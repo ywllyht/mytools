@@ -23,6 +23,7 @@ tar -cjvf /path/to/foo.tgz /path/to/foo/
 tar -xvf /path/to/foo.tar -C /path/to/destination/
 
 # for xz file 
+tar -xf xxx.tar.xz
 just use "xz -d aa.tar.xz" to decompress
 
 # for .bz2 file
