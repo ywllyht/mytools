@@ -25,6 +25,7 @@ function FindProxyForURL(url, host)
         ,'googlevideo.com'
         ,'gstatic.com'
         ,'googleapis.com'
+        ,'googlegroups.com'
         
         ,'onedrive.live.com'
 
