@@ -15,6 +15,8 @@ function FindProxyForURL(url, host)
         ,'facebook.com'
         ,'facebook.net'
         ,'fbcdn.net'
+        
+        ,'slideshare.net'
 
         ,'ggpht.com'
         ,'goo.gl'
@@ -45,6 +47,7 @@ function FindProxyForURL(url, host)
         ,'cnzz.com'
         ,'dropbox.com'
         ,'slack.com'
+        
 
     ];
     
