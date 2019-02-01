@@ -1,0 +1,7 @@
+# 出现Cannot assign requested address错误的时候，指定ip
+jupyter notebook --init --ip=0.0.0.0 --port=3389 
+
+#  使用80端口
+sudo jupyter notebook --ip=0.0.0.0 --allow-root --port=80
+
+
