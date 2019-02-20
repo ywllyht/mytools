@@ -9,6 +9,7 @@ function FindProxyForURL(url, host)
         ,'blogspot.com'
         ,'bit.ly'
         ,'appspot.com'
+        ,'quora.com'
 
         ,'feedburner.com'
         ,'flickr.com'
