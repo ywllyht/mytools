@@ -141,6 +141,18 @@ EOF
 
 }
 
+function create_ssh_folder {
+  if [ -d ~/.ssh ]; then
+     echo ".ssh folder exist, skip"
+     return 0
+  fi
+  mkdir ~/.ssh
+  chmod 755 ~/.ssh
+
+  echo "please copy id_rsa id_rsa.pub from somewhere, and chmod 644"
+
+}
+
 
 command_sequence=(
    before_install 
@@ -151,6 +163,7 @@ command_sequence=(
    install_thefuck
    install_autojump
    install_tmux
+   create_ssh_folder
 )
 
 for (( index=0; index<${#command_sequence[*]}; index++)); do
