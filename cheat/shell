@@ -2,3 +2,12 @@
 # replace "*.htm" to "*.html" under a folder
 find . -name '*.htm' -exec sh -c 'mv "$0" "${0%.htm}.html"' {} \;
 
+# trap Ctrl c
+trap ctrl_c INT
+
+# cat generate file by EOF
+cat <<'EOF'>~/.tmux.conf
+set-window-option -g mouse on
+EOF
+
+

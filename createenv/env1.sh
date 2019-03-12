@@ -1,6 +1,9 @@
 #!/bin/bash
 # scripts to prepare dev env
 
+
+trap ctrl_c INT
+
 function before_install {
   echo "You must run this script with bash not sh!"
   if [ ! -d ~/myproject ]; then
@@ -14,6 +17,20 @@ function before_install {
   return 0
   
 }
+
+function install_epel_for_centos7 {
+  if [ -e /etc/redhat-release ]; then
+      if [ -e /etc/yum.repos.d/epel.repo ]; then
+        echo "epel repo already installed"
+      else
+        sudo yum -y install epel-release
+      fi
+  else
+     echo "This is not centos, skip"
+  fi
+  return 0
+}
+
 
 function install_anaconda {
   echo "install anaconda"
@@ -40,6 +57,20 @@ function install_git {
      sudo yum install -y git
   else
      sudo apt install -y git
+  fi
+  return 0
+}
+
+function install_wget {
+  wget --version | head -n 2
+  if [ $? -eq 0 ]; then 
+      echo "wget is installed, skip"
+      return 0
+  fi
+  if [ -e /etc/redhat-release ]; then
+     sudo yum install -y wget
+  else
+     sudo apt install -y wget
   fi
   return 0
 }
@@ -104,12 +135,28 @@ function install_tmux {
       echo "tmux is installed, skip"
       return 0
   fi
+
+  grep tmux ~.bashrc
+  if [ $? -eq 0 ]; then 
+    echo "we have set alias for tmux in .bashrc, skip"
+  else 
+    echo "alias t='tmux'" >> ~/.bashrc
+    echo "alias ta='tmux attach'" >> ~/.bashrc
+  fi
+
   if [ -e /etc/redhat-release ]; then
      sudo yum install -y tmux
+     echo "We could not use yum to install tmux, as it is old version 1.8"
+     echo "Please visit https://liyang85.github.io/how-to-install-the-latest-stable-tmux-on-centos7.html"
+     return 0
   else
      sudo apt install -y tmux
   fi
-  
+
+  if [ -e ~/.tmux.conf ]; then
+     echo "~/.tmux.conf exists, skip"
+     return 0
+  fi
 cat <<'EOF'>~/.tmux.conf
 
 set-window-option -g mouse on
@@ -156,7 +203,9 @@ function create_ssh_folder {
 
 command_sequence=(
    before_install 
+   install_epel_for_centos7
    install_git
+   install_wget
    install_anaconda
    download_mytools
    install_cheat
