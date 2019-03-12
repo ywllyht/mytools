@@ -17,6 +17,12 @@ pip install -r requirements.txt
 # Show details of a package
 pip show SomePackage
 
+# show installed files of a package
+pip show -f SomePackage
+
+# uninstall
+pip uninstall SomePackage
+
 # List outdated packages
 pip list --outdated
 
