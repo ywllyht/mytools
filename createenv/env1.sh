@@ -135,13 +135,17 @@ function install_tmux {
       echo "tmux is installed, skip"
       return 0
   fi
-
+ 
   grep tmux ~.bashrc
   if [ $? -eq 0 ]; then 
     echo "we have set alias for tmux in .bashrc, skip"
   else 
     echo "alias t='tmux'" >> ~/.bashrc
     echo "alias ta='tmux attach'" >> ~/.bashrc
+  fi
+
+  if [ ! -d ~/.tmux/plugins/tpm ]; then 
+     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
   fi
 
   if [ -e /etc/redhat-release ]; then
