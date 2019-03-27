@@ -192,6 +192,30 @@ EOF
 
 }
 
+
+function install_fish_shell {
+  fish -v 
+  if [ $? -eq 0 ]; then
+      echo "fish is installed, skip"
+      return 0
+  fi
+  if [ -e /etc/redhat-release ]; then
+    sudo yum-config-manager --add-repo https://download.opensuse.org/repositories/shells:/fish:/release:/3/RHEL_7/shells:fish:release:3.repo
+    sudo yum install fish
+    echo "source /etc/profile.d/autojump.sh" >> ~/.config/fish/config.fish
+  else
+    sudo apt-add-repository ppa:fish-shell/release-3
+    sudo apt-get update
+    sudo apt-get install fish
+    echo "source /usr/share/autojump/autojump.fish" >> ~/.config/fish/config.fish
+  fi
+
+  return 0
+
+}
+
+
+
 function create_ssh_folder {
   if [ -d ~/.ssh ]; then
      echo ".ssh folder exist, skip"
@@ -217,6 +241,7 @@ command_sequence=(
    install_autojump
    install_tmux
    create_ssh_folder
+   install_fish_shell
 )
 
 for (( index=0; index<${#command_sequence[*]}; index++)); do
