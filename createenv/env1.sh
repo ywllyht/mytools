@@ -164,6 +164,8 @@ function install_tmux {
 cat <<'EOF'>~/.tmux.conf
 
 set-window-option -g mouse on
+set -g default-shell /usr/bin/fish 
+set -g default-command /usr/bin/fish 
 
 # List of plugins
 set -g @plugin 'tmux-plugins/tpm'
@@ -202,13 +204,15 @@ function install_fish_shell {
   if [ -e /etc/redhat-release ]; then
     sudo yum-config-manager --add-repo https://download.opensuse.org/repositories/shells:/fish:/release:/3/RHEL_7/shells:fish:release:3.repo
     sudo yum install fish
-    echo "source /etc/profile.d/autojump.sh" >> ~/.config/fish/config.fish
+    sudo yum install autojump-fish
+    echo "source /usr/share/autojump/autojump.fish" >> ~/.config/fish/config.fish
   else
     sudo apt-add-repository ppa:fish-shell/release-3
     sudo apt-get update
     sudo apt-get install fish
     echo "source /usr/share/autojump/autojump.fish" >> ~/.config/fish/config.fish
   fi
+  
 
   return 0
 
