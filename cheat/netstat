@@ -1,0 +1,5 @@
+# view which process occupy 6000 on windows
+netstat -ano | grep 6000
+tasklist | findstr xxx
+
+
