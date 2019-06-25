@@ -232,6 +232,17 @@ function create_ssh_folder {
 
 }
 
+function update_vimrc {
+  echo "set nu" > ~/.vimrc
+  echo "ts=4" >> ~/.vimrc
+  echo "expandtab" >> ~/.vimrc
+  echo "autoindent" >> ~/.vimrc
+
+  echo "update ~/.vimrc successfully!"
+  return 0
+
+}
+
 
 command_sequence=(
    before_install 
@@ -245,6 +256,7 @@ command_sequence=(
    install_autojump
    install_tmux
    create_ssh_folder
+   update_vimrc
    install_fish_shell
 )
 
