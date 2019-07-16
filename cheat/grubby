@@ -1,0 +1,11 @@
+grubby --set-default-index=0   
+grubby --add-kernel=/boot/vmlinuz-3.10.0-957.21.3.el7.x86_64 --title="kdumptest" --initrd=/boot/initramfs-3.10.0-957.21.3.el7.x86_64kdump.img --copy-default --set-index=2   
+   
+grubby --args="crashkernel=256M spectre_v2=off" --update-kernel $(grubby --default-kernel) >> $log_file 2>&1
+grubby --remove-args="nokaslr" --update-kernel $(grubby --default-kernel) >> $log_file 2>&1   
+
+grubby --update-kernel=ALL --args="crashkernel=768M"
+grubby --update-kernel=2 --args="crashkernel=768M"
+
+
+
