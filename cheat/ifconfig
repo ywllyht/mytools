@@ -13,3 +13,11 @@ ifconfig eth0 192.168.1.100 netmask 255.255.255.0
 # You may also need to add a gateway IP
 route add -net 192.168.1.0 netmask 255.255.255.0 gw 192.168.1.1
 route add default gw 10.200.208.1
+
+# delete ip 
+ifconfig eth1 del 10.2.0.1
+
+# up and down
+ifconfig eth1 up
+ifconfig eth1 down
+
