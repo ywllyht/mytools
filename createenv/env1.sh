@@ -229,7 +229,28 @@ function create_ssh_folder {
   chmod 755 ~/.ssh
 
   echo "please copy id_rsa id_rsa.pub from somewhere, and chmod 644"
+  return 0
+}
 
+function update_vimrc {
+  echo "set nu" > ~/.vimrc
+  echo "ts=4" >> ~/.vimrc
+  echo "expandtab" >> ~/.vimrc
+  echo "autoindent" >> ~/.vimrc
+
+  echo "update ~/.vimrc successfully!"
+  return 0
+
+}
+
+function install_ranger {
+  ranger --version 
+  if [ $? -eq 0 ]; then
+      echo "ranger is installed, skip"
+      return 0
+  fi
+  pip install ranger-fm
+  return 0
 }
 
 
@@ -245,7 +266,9 @@ command_sequence=(
    install_autojump
    install_tmux
    create_ssh_folder
+   update_vimrc
    install_fish_shell
+   install_ranger
 )
 
 for (( index=0; index<${#command_sequence[*]}; index++)); do
