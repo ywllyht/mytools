@@ -1,6 +1,9 @@
 # To see example usage of a program:
 cheat <command>
 
+# check CHEAT_PATH folder
+cheat -d
+
 # To edit a cheatsheet
 cheat -e <command>
 
