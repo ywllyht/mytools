@@ -94,7 +94,8 @@ function install_cheat {
   fi
   pip install cheat
   echo "export CHEAT_EDITOR=vi" >> ~/.bashrc
-  echo "export DEFAULT_CHEAT_DIR='~/myproject/mytools/cheat'" >> ~/.bashrc
+  echo "export CHEAT_USER_DIR='~/myproject/mytools/cheat'" >> ~/.bashrc
+  echo "export CHEAT_PATH='/home/liangjie/anaconda3/lib/python3.6/site-packages/usr/share/cheat'" >> ~/.bashrc
   return 0
   
 }

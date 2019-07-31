@@ -22,8 +22,9 @@ cheat -v
       # insert following lines into ~/.bashrc
       export CHEAT_EDITOR=vi
       export CHEATCOLORS=true
-      export DEFAULT_CHEAT_DIR='~/myproject/mytools/cheat'
-
+      export CHEAT_USER_DIR='~/myproject/mytools/cheat'
+      export CHEAT_PATH='/home/liangjie/anaconda3/lib/python3.6/site-packages/usr/share/cheat'
+      # you can not set CHEAT_PATH="~/anaconda3/lib/python3.6/site-packages/usr/share/cheat"
 
       # sync with github
       cd ~/myproject
