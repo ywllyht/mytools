@@ -1,0 +1,4 @@
+# unset env var
+set -e myvar
+
+
