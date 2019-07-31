@@ -58,6 +58,7 @@ function install_git {
   else
      sudo apt install -y git
   fi
+  echo "export GIT_EDITOR=vi" >> ~/.bashrc
   return 0
 }
 
