@@ -31,6 +31,8 @@ function FindProxyForURL(url, host)
         ,'googleapis.com'
         ,'googlegroups.com'
         
+        ,'golang.org'
+        
         ,'onedrive.live.com'
 
         ,'t.co'
@@ -42,6 +44,7 @@ function FindProxyForURL(url, host)
         ,'wordpress.com'
 
         ,'youtube.com'
+        ,'youtu.be'
         
         ,'ytimg.com'
         ,'jquery.com'
@@ -49,6 +52,7 @@ function FindProxyForURL(url, host)
         ,'cnzz.com'
         ,'dropbox.com'
         ,'slack.com'
+        
         
 
     ];

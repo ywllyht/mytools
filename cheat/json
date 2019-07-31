@@ -1,0 +1,8 @@
+# print json pretty
+# method 1
+cat xxx.json | python -m "json.tool"
+
+# method 2
+cat xxx.json |  jq .
+
+
