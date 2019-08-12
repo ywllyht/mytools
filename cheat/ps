@@ -1,0 +1,25 @@
+# To list every process on the system:
+ps aux
+
+# To list a process tree
+ps axjf
+
+# To list every process owned by foouser:
+ps -aufoouser
+
+# To list every process with a user-defined format:
+ps -eo pid,user,command
+
+# Exclude grep from your grepped output of ps.
+# Add [] to the first letter. Ex: sshd -> [s]shd
+ps aux | grep '[h]ttpd'
+
+# how to find father pid
+ps -ef |grep <进程名>      # 在显示的输出中，第三列就是该进程的父进程PID，然后可以再使用ps命令来查看父进程的名称
+
+# how to display process tree
+pstree -p 6648
+ps --forest
+ps aux --forest
+
+
