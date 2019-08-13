@@ -1,0 +1,14 @@
+# (1) install with bash
+$ curl --create-dirs -o ~/.config/up/up.sh https://raw.githubusercontent.com/shannonmoeller/up/master/up.sh
+$ echo 'source ~/.config/up/up.sh' >> ~/.bashrc
+
+# (2) install with fish
+$ curl --create-dirs -o ~/.config/up/up.fish https://raw.githubusercontent.com/shannonmoeller/up/master/up.fish
+$ source ~/.config/up/up.fish
+$ echo 'source ~/.config/up/up.fish' >> ~/.config/fish/config.fish
+
+# (3) usage 
+up bar
+up 4
+
+
