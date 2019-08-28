@@ -2,9 +2,10 @@
 set -e myvar
 
 # set env var
-export GOROOT=/usr/local/go
-export GOPATH=$HOME/myproject/golang
-export PATH="$HOME/anaconda3/bin:$GOPATH/bin:$GOROOT/bin:$PATH"
+set -x GOROOT /usr/local/go
+set -x GOPATH $HOME/myproject/golang
+set -x PATH $GOROOT/bin $GOPATH/bin $PATH
+
 
 # ~/.config/fish/fish.config
 #
