@@ -6,9 +6,9 @@ set -x GOROOT /usr/local/go
 set -x GOPATH $HOME/myproject/golang
 set -x PATH $GOROOT/bin $GOPATH/bin $PATH
 
-
 # ~/.config/fish/fish.config
-#
 
+# how to decide current shell is fish or bash
+ps
 
 
