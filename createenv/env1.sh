@@ -256,6 +256,21 @@ function install_ranger {
 }
 
 
+function install_ag {
+  ag -V 
+  if [ $? -eq 0 ]; then
+      echo "ag is installed, skip"
+      return 0
+  fi
+  if [ -e /etc/redhat-release ]; then
+     sudo yum install -y epel-release.noarch the_silver_searcher
+  else
+     sudo apt install -y silversearcher-ag
+  fi
+  return 0
+}
+
+
 command_sequence=(
    before_install 
    install_epel_for_centos7
@@ -271,6 +286,7 @@ command_sequence=(
    update_vimrc
    install_fish_shell
    install_ranger
+   install_ag
 )
 
 for (( index=0; index<${#command_sequence[*]}; index++)); do
