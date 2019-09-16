@@ -1,0 +1,12 @@
+# official site
+https://github.com/koalaman/shellcheck
+
+# install 
+apt-get install shellcheck
+
+yum -y install epel-release
+yum install ShellCheck
+
+pacman -S shellcheck
+
+
