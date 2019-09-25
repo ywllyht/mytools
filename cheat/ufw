@@ -1,0 +1,37 @@
+# ufw is the firewall command for ubuntu18
+sudo apt install ufw
+sudo ufw enable
+sudo ufw disable
+sudo ufw reset
+
+# (1) check
+sudo ufw status verbose
+sudo ufw app list
+
+# (2) allow
+sudo ufw allow ssh
+sudo ufw allow http
+sudo ufw allow https
+sudo ufw allow 3389/tcp
+sudo ufw allow 8000:8100/udp
+sudo ufw allow from 55.56.57.58 to any port 22
+sudo ufw allow from 192.168.1.0/24 to any port 3306
+sudo ufw allow in on eth2 to any port 3306
+
+
+# (3) deny
+sudo ufw deny from 33.34.35.0/34
+sudo ufw deny from 23.24.25.0/24 to any port 80
+sudo ufw deny from 23.24.25.0/24 to any port 443
+
+
+# (4) delete rules
+(4.1) delete by seq number
+sudo ufw status numbered
+sudo ufw delete 2
+
+(4.2) delete by rule
+sudo ufw delete allow 8168
+
+
+
