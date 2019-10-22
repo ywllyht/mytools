@@ -4,3 +4,9 @@ stty rows 50 cols 132
 # clean
 stty sane
 
+# erase
+stty erase <ctrl-v> <backspace>
+
+# erase in perl debug
+!!stty erase <ctrl-v> <backspace>
+
