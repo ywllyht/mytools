@@ -1,0 +1,13 @@
+
+
+mvn help:system	
+mvn clean compile
+mvn clean test
+mvn clean package -D maven.test.skip=true
+mvn clean install
+mvn archetype:create -DgroupId=my.maven.test -DartifactId=HelloWorld  -DarchetypeArtifactId=maven-archetype-webapp
+mvn eclipse:eclipse
+
+mvn dependency:tree
+
+
